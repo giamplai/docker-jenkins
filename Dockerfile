@@ -1,9 +1,8 @@
-FROM jenkins:lts
+FROM jenkins/jenkins:lts
 USER root
 
-
 RUN apt-get update && \
-apt-get install -qy \
+  apt-get install -qy \
   apt-utils \
   libyaml-dev \
   build-essential \
@@ -27,7 +26,7 @@ apt-get install -qy \
   zip \
   unzip \
   gfortran && \
-rm -rf /var/lib/apt/lists/*
+  rm -rf /var/lib/apt/lists/*
 
 # Install docker
 RUN wget https://download.docker.com/linux/debian/gpg && \
